@@ -3,15 +3,13 @@ pipeline {
   stages {
     stage('Clean') {
       steps {
-        sh 'sh "mvn clean"'
+        sh 'mvn clean'
       }
     }
-
     stage('Package') {
       steps {
-        sh 'sh "\'mvn\' -Dmaven.test.skip=true package"'
+        sh 'mvn -Dmaven.test.skip=true package'
       }
     }
-
   }
 }
